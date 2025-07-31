@@ -2,30 +2,18 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Volnorez чат с автоматическим размером</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Автоматическая высота и ширина</title>
   <style>
-    /* Сбрасываем отступы и задаём высоту для body и html */
+    /* Сделать body и html 100% высоты для корректной работы */
     html, body {
-      margin: 0; 
-      padding: 0; 
-      height: 100%;
-      width: 100%;
-      overflow: hidden; /* чтобы не было скролла у страницы */
-      background: #f0f0f0;
-      font-family: Arial, sans-serif;
+      margin: 0; padding: 0; height: 100%;
     }
-
-    /* Контейнер чата */
+    /* Контейнер для чата займет всю доступную ширину и высоту */
     #volnorez_chat {
-      width: 100vw;    /* на всю ширину окна */
-      height: 80vh;    /* 80% высоты окна */
-      max-width: 600px; /* максимум по ширине (опционально) */
-      max-height: 600px; /* максимум по высоте (опционально) */
-      margin: 20px auto; /* центрируем по горизонтали и отступ сверху */
-      border: 1px solid #ccc;
+      width: 100vw;   /* 100% ширины окна просмотра */
+      height: 100vh;  /* 100% высоты окна просмотра */
       box-sizing: border-box;
-      background: white;
-      position: relative;
     }
   </style>
 </head>
@@ -35,8 +23,14 @@
        data-code="001f69a7" 
        data-skin-params="'panel_clr':'213,213,213','msgbg_clr':'243,243,243'" 
        data-skin="skin_4">
-    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+  <script>
+    vkBridge.send('VKWebAppInit');
+  </script>
+  <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
 
 </body>
 </html>
