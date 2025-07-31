@@ -2,30 +2,44 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Автоматический размер чата и скрипты</title>
+  <title>Автоматическая ширина и высота плеера</title>
   <style>
-    /* Сделать контейнер чата адаптивным */
-    #volnorez_chat {
-      width: 100%;
-      max-width: 600px; /* по желанию */
-      height: auto;     /* высота по содержимому */
-      margin: 20px auto;
+    /* Родительский контейнер - адаптивный */
+    #vplayer001f4811 {
+      width: 100%;          /* ширина растягивается по ширине родителя */
+      max-width: 600px;     /* максимальная ширина */
+      aspect-ratio: 16 / 9; /* соотношение сторон для автоматической высоты */
+      position: relative;
+      margin: 0 auto;       /* центрируем по горизонтали */
+      background: #f3f3f3;  /* фон для наглядности */
+    }
+    /* Плеер (iframe, video или другие вложенные элементы) растягивается на весь контейнер */
+    #vplayer001f4811 > iframe,
+    #vplayer001f4811 > video,
+    #vplayer001f4811 > * {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Контейнер чата -->
-  <div id="volnorez_chat" data-code="001f69a7" data-skin-params="'panel_clr':'213,213,213','msgbg_clr':'243,243,243'" data-skin="skin_4">
-    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
+  <div id="vplayer001f4811">
+    <a href="http://volnorez.com/music-club-zolushka" title="радио Music Club Золушка">радио Music Club Золушка</a>
+    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%2247%2C98%2C135%22%2C%22bg_clr1%22%3A%22243%2C243%2C243%22%2C%22bg_clr2%22%3A%22196%2C196%2C196%22%2C%22bg_clr3%22%3A%22183%2C183%2C183%22%2C%22bg_clr4%22%3A%22167%2C167%2C167%22%2C%22txt_clr%22%3A%22119%2C227%2C255%22%7D%7D"></script>
   </div>
 
-  <!-- Подключение внешних библиотек -->
+  <!-- Подключение необходимых скриптов -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
   <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-
+  
   <script>
-    // Инициализация VK Bridge
+    // Инициализация VK-bridge
     vkBridge.send('VKWebAppInit');
   </script>
 
