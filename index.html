@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Радио Music Club Золушка и Чат</title>
-  <!-- Подключаем внешние скрипты, если нужны заранее -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
-  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+  <title>Радио Music Club Золушка и чат</title>
   <style>
     body {
       background: #f2f2f2;
@@ -18,36 +15,47 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
+    }
+    #vplayer001f4811,
+    #volnorez_chat {
+      width: 90%;
+      max-width: 480px;
+      margin-bottom: 22px;
+    }
+    #volnorez_chat {
+      height: 450px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
     }
   </style>
+
+  <!-- Подключаем внешние скрипты -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </head>
 <body>
   <!-- Радио-плеер -->
   <div id="vplayer001f4811">
-    <a href="http://volnorez.com/music-club-zolushka" title="радио Music Club Золушка">
+    <a href="http://volnorez.com/music-club-zolushka" title="радио Music Club Золушка" target="_blank" rel="noopener noreferrer">
       радио Music Club Золушка
     </a>
-    <script async type="text/javascript"
-      src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%2247%2C98%2C135%22%2C%22bg_clr1%22%3A%22243%2C243%2C243%22%2C%22bg_clr2%22%3A%22196%2C196%2C196%22%2C%22bg_clr3%22%3A%22183%2C183%2C183%22%2C%22bg_clr4%22%3A%22167%2C167%2C167%22%2C%22txt_clr%22%3A%22119%2C227%2C255%22%7D%7D">
-    </script>
+    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%2247%2C98%2C135%22%2C%22bg_clr1%22%3A%22243%2C243%2C243%22%2C%22bg_clr2%22%3A%22196%2C196%2C196%22%2C%22bg_clr3%22%3A%22183%2C183%2C183%22%2C%22bg_clr4%22%3A%22167%2C167%2C167%22%2C%22txt_clr%22%3A%22119%2C227%2C255%22%7D%7D"></script>
   </div>
 
   <!-- Чат -->
   <div id="volnorez_chat"
-      data-code="001f69a7"
-      data-skin-params="'panel_clr':'213,213,213','msgbg_clr':'243,243,243','icon_clr':'47,98,135','label_clr':'20,53,107','dj_clr':'255,47,0'"
-      data-skin="skin_4">
+       data-code="001f69a7"
+       data-skin-params="'panel_clr':'213,213,213','msgbg_clr':'243,243,243','icon_clr':'47,98,135','label_clr':'20,53,107','dj_clr':'255,47,0'"
+       data-skin="skin_4">
   </div>
   <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
 
-  <!-- VKBridge и другие JS-скрипты -->
+  <!-- Инициализация VKBridge -->
   <script>
-    // Инициализация VKBridge (если используется во внешних компонентах)
     if (window.vkBridge) {
       vkBridge.send('VKWebAppInit');
     }
-    // Здесь можно ваши другие скрипты по необходимости
   </script>
 </body>
 </html>
