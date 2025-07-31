@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Радио и чат</title>
+  <!-- Здесь можно подключать CSS или библиотеки JS (например, hls.js, vk-bridge), если нужно -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+</head>
+<body>
+
+  <div id="vplayer001f4811">
+    <a href="http://volnorez.com/music-club-zolushka" title="радио Music Club Золушка">
+      радио Music Club Золушка
+    </a>
+    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%220%2C2%2C143%22%7D%7D"></script>
+  </div>
+
+  <div 
+    id="volnorez_chat"
+    data-code="001f69a7"
+    data-skin-params="'panel_clr':'213,213,213','msgbg_clr':'243,243,243','icon_clr':'36,97,143','dj_clr':'252,5,5'"
+    data-skin="skin_4"
+  >
+  </div>
+  <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
+
+  <script>
+    vkBridge.send('VKWebAppInit');
+    // Ваши дополнительные скрипты, если нужны
+  </script>
+</body>
+</html>
