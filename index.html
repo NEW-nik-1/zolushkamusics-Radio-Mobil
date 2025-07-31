@@ -4,43 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Радио Music Club Золушка и чат</title>
+
+  <!-- Внешние библиотеки -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+
   <style>
     body {
-      background: #f2f2f2;
       font-family: Arial, sans-serif;
+      background: #f2f2f2;
       margin: 0;
-      padding: 10px;
-      min-height: 100vh;
-      box-sizing: border-box;
+      padding: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
-    #vplayer001f4811,
-    #volnorez_chat {
+    #vplayer001f4811 {
       width: 90%;
       max-width: 480px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     #volnorez_chat {
-      height: 450px;
+      width: 90%;           /* Можно задать конкретную ширину, например 400px */
+      max-width: 480px;     /* Максимальная ширина */
+      height: 450px;        /* Задайте нужную высоту */
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
+      margin-bottom: 20px;
     }
   </style>
-
-  <!-- Подключаем внешние скрипты -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.1/dist/hls.min.js"></script>
-  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </head>
 <body>
-  <!-- Радио-плеер -->
+
+  <!-- Плеер радио -->
   <div id="vplayer001f4811">
     <a href="http://volnorez.com/music-club-zolushka" title="радио Music Club Золушка" target="_blank" rel="noopener noreferrer">
       радио Music Club Золушка
     </a>
-    <script async type="text/javascript" src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%2247%2C98%2C135%22%2C%22bg_clr1%22%3A%22243%2C243%2C243%22%2C%22bg_clr2%22%3A%22196%2C196%2C196%22%2C%22bg_clr3%22%3A%22183%2C183%2C183%22%2C%22bg_clr4%22%3A%22167%2C167%2C167%22%2C%22txt_clr%22%3A%22119%2C227%2C255%22%7D%7D"></script>
+    <script async type="text/javascript"
+      src="//volnorez.com/plugins/jscode/player_js/001f4811/%7B%22autoplay%22%3Atrue%2C%22share%22%3A%22source%22%2C%22skin%22%3A%22main%22%2C%22style%22%3A%7B%22icon_clr%22%3A%2247%2C98%2C135%22%2C%22bg_clr1%22%3A%22243%2C243%2C243%22%2C%22bg_clr2%22%3A%22196%2C196%2C196%22%2C%22bg_clr3%22%3A%22183%2C183%2C183%22%2C%22bg_clr4%22%3A%22167%2C167%2C167%22%2C%22txt_clr%22%3A%22119%2C227%2C255%22%7D%7D">
+    </script>
   </div>
 
   <!-- Чат -->
@@ -51,8 +57,8 @@
   </div>
   <script async type="text/javascript" src="//volnorez.com/plugins/jscode/chat_js"></script>
 
-  <!-- Инициализация VKBridge -->
   <script>
+    // Инициализация VKBridge
     if (window.vkBridge) {
       vkBridge.send('VKWebAppInit');
     }
